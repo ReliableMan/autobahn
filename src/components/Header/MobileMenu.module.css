@@ -43,6 +43,12 @@
   transform-origin: center;
 }
 
+@media (max-width: 480px) {
+  .menu__link-text {
+    font-size: 1.5rem;
+  }
+}
+
 .menu__underline {
   position: absolute;
   bottom: -8px;

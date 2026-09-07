@@ -71,7 +71,6 @@ export default function Header() {
       
         <div className={styles.header__logo}>
           <span className={styles['header__logo-name']}>AUTOHAUS BADEN</span>
-          {/* <span className={styles['header__logo-city']}></span> */}
         </div>
 
         
