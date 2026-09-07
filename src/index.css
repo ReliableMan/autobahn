@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+body {
+  background-color: #0b0b0b;
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Элегантный темный скроллбар */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0b0b; 
+}
+::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555555;
+}
+
+.mobile-burger {
+  display: none !important;
+}
+
+/* На экранах меньше 900px (Планшеты и Телефоны) */
+@media (max-width: 900px) {
+  /* Скрываем текстовое меню */
+  .desktop-nav {
+    display: none !important;
+  }
+  
+  /* Показываем бургер */
+  .mobile-burger {
+    display: flex !important;
+  }
+  
+  /* Делаем кнопку звонка чуть компактнее, чтобы влезла с логотипом */
+  .header-call-btn span {
+    display: none; /* Скрываем текст номера, оставляем только трубку */
+  }
+  .header-call-btn {
+    padding: 10px !important;
+    border-radius: 50% !important;
+  }
+}
+
+.ios-safari-buffer {
+  height: 0;
+  width: 100%;
+  pointer-events: none;
+  background: transparent;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .ios-safari-buffer {
+    height: 650px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ios-safari-buffer {
+    height: 240px;
+  }
+}
