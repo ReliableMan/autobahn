@@ -156,7 +156,7 @@ export default function HeroScroller() {
       let { isTablet, isMobile } = context.conditions;
       
       const startY = isMobile ? -30 : -50;
-      const scrollDistance = isMobile ? '+=150%' : (isTablet ? '+=200%' : '+=500%');
+      const scrollDistance = isMobile ? '+=150%' : (isTablet ? '+=200%' : '+=300%');
 
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -172,14 +172,15 @@ export default function HeroScroller() {
         frame: frameCount,
         snap: 'frame',
         ease: 'none',
+        duration: 1,
         onUpdate: () => renderFrame(currentFrame.current.frame),
       }, 0);
 
-      tl.to(`.${styles.hero__intro}`, { opacity: 0, y: startY, duration: 0.2 }, 0.1);
+      tl.to(`.${styles.hero__intro}`, { opacity: 0, y: startY, duration: 0.15 }, 0.1);
 
-      tl.to(`.${styles['hero__service--left']}`, { opacity: 1, y: 0, duration: 0.1 }, 0.3)
-        .to(`.${styles['hero__service--left']}`, { opacity: 0, y: startY, duration: 0.1 }, 0.5)
-        .to(`.${styles['hero__service--right']}`, { opacity: 1, y: 0, duration: 0.1 }, 0.7);
+      tl.to(`.${styles['hero__service--left']}`, { opacity: 1, y: 0, duration: 0.15 }, 0.35)
+        .to(`.${styles['hero__service--left']}`, { opacity: 0, y: startY, duration: 0.15 }, 0.75)
+        // .to(`.${styles['hero__service--right']}`, { opacity: 1, y: 0, duration: 0.1 }, 0.7);
     });
 
     return () => {
@@ -217,12 +218,12 @@ export default function HeroScroller() {
             </div>
           </div>
 
-          <div className={`${styles.hero__service} ${styles['hero__service--right']}`}>
+          {/* <div className={`${styles.hero__service} ${styles['hero__service--right']}`}>
             <div className={styles['hero__service-inner']}>
               <h2 className={styles['hero__service-title']}>Partner Euromaster</h2>
               <p className={styles['hero__service-text']}>Deutsche Präzision bis ins kleinste Detail</p>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
   );

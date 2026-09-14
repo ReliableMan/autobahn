@@ -34,7 +34,6 @@ const galleryImages = [
 const benefits = [
   'Qualifizierte Spezialisten',
   'Moderne Ausstattung für Werkstätten',
-  'Qualität der Euromaster-Partner',
   'Faire Preise und Transparenz'
 ];
 
